@@ -1,0 +1,44 @@
+#report 1-2 ~ 1-4
+##안동대학교 심재창교수님
+...
+
+void setup(){
+  size(500,500);
+  strokeWeight(16);
+  stroke(0,0,255);
+}
+void draw(){
+  if(mousePressed){
+  line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+}
+
+void setup(){
+  size(500,500);
+}
+int h=0;
+void draw(){
+  background(0);
+  fill(0,0,255);
+  ellipse(h=h+5,250,200,200);
+  if(h>500) h=0;
+  }
+  
+void setup(){ //initial
+  size(500,500);
+  rectMode(CENTER);
+}
+float f=0;
+void draw(){  //loop
+  translate(mouseX, mouseY);
+  rotate(f);
+  scale(sin(f)+1);  // 0<=scale <=2
+  f = f+0.05;
+  fill(0,255,0);
+  rect(0, 0, 80, 80);
+  fill(255,0,255);
+  ellipse(0,0,80,80);
+}
+...
+###리포트 소감
+*프로세싱 수업 재밌습니다.
