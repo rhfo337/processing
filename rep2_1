@@ -39,6 +39,21 @@ void draw(){  //loop
   fill(255,0,255);
   ellipse(0,0,80,80);
 }
+
+void setup(){
+  size(800,300);
+  textSize(128);
+}
+int i, a=1;
+void draw(){
+  background(0,0,155);
+  if(keyPressed)
+  a = key-'0';
+  text("andong",i=i+a,200);
+  if(i>800) i=0;
+}
+
+
 ...
 ###리포트 소감
 *프로세싱 수업 재밌습니다.
