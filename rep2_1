@@ -54,6 +54,25 @@ void draw(){
 }
 
 
+PFont f;
+  void setup() {
+    size(800,300);
+    textSize(128);
+    f = createFont("굴림", 34);
+    textFont(f);
+  }
+  int i,dir=1,sp=1;
+  void draw() {
+    fill(0);
+    background(255, 50, 255);
+    text("안동대 컴공 사랑합니다",100, i++);
+    if(i>width) dir=1;
+    i = i+dir*sp;
+    if(keyPressed)
+    sp=key-'0';
+  }
+
+
 ...
 ###리포트 소감
 *프로세싱 수업 재밌습니다.
