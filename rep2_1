@@ -1,15 +1,15 @@
-#report 1-2 ~ 1-4
-##안동대학교 심재창교수님
+#report 
+##심재창교수님
 ...
 
 void setup(){
-  size(500,500);
-  strokeWeight(16);
-  stroke(0,0,255);
+  size(500,500); // 화면사이즈 
+  strokeWeight(16); //선 크기
+  stroke(0,0,255);  //선 색 
 }
 void draw(){
-  if(mousePressed){
-  line(pmouseX, pmouseY, mouseX, mouseY);
+  if(mousePressed){  //마우스를 누를때
+  line(pmouseX, pmouseY, mouseX, mouseY);  // 선이 px~p y , x ~ y  
   }
 }
 
@@ -20,7 +20,7 @@ int h=0;
 void draw(){
   background(0);
   fill(0,0,255);
-  ellipse(h=h+5,250,200,200);
+  ellipse(h=h+5,250,200,200);  //타원형 
   if(h>500) h=0;
   }
   
@@ -31,18 +31,18 @@ void setup(){ //initial
 float f=0;
 void draw(){  //loop
   translate(mouseX, mouseY);
-  rotate(f);
-  scale(sin(f)+1);  // 0<=scale <=2
+  rotate(f); //회전값을 f로 
+  scale(sin(f)+1);  // 0<=scale <=2   
   f = f+0.05;
-  fill(0,255,0);
-  rect(0, 0, 80, 80);
+  fill(0,255,0); //채우기 
+  rect(0, 0, 80, 80);  //정사각형 
   fill(255,0,255);
   ellipse(0,0,80,80);
 }
 
 void setup(){
   size(800,300);
-  textSize(128);
+  textSize(128); //글자크기 
 }
 int i, a=1;
 void draw(){
@@ -113,6 +113,36 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   }
   endShape(CLOSE);
 }
+
+
+
+
+
+float angle; //소수점이 있는 숫자를 표현
+void setup() {
+  size(700, 700, P3D); // P3D 프로세싱을 3차원으로 쓰기위함 
+}
+void draw() {
+  background(0); // 배경을 검은색으로 
+  camera(width/2, height/2, 400, width/2, height/2, 0, 0, 1, 0); //카메라 방향
+  pointLight(155, 155, 155, width/2, height/2, -400); //모든 방향으로 골고루 빛을 비추는 조명 
+  translate(width/2, height/2);
+
+  rotateY(angle);
+  rotateX(angle);
+  rotateZ(angle);
+  angle += 0.01;
+  beginShape(QUADS);
+  normal(0, 0, 1);
+  fill(0, 0, 255); //채우기 
+  vertex(-100, +100); // 꼭짓점 
+  vertex(+100, +100);
+  fill(255, 0, 0);
+  vertex(+100, -100);
+  vertex(-100, -100);
+  endShape();
+}
+
 
 ...
 ###리포트 소감
