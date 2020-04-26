@@ -1,6 +1,17 @@
 #report 
 ##심재창교수님
 ...
+외계인이 X자 하는 모양 
+size(200,200);
+rectMode(CENTER); 
+rect(100,100,20,100);//몸통
+ellipse(100,70,60,60); //  타원형 머리
+ellipse(81,70,16,32); //  타원형 눈 
+ellipse(119,70,16,32); // 타원형 눈 
+line(90,150,80,160);  //오른쪽다리
+line(110,150,120,160); /왼쪽다리
+line(110,110,80,80);//왼손
+line(89,110,150,80);//오른손 
 
 void setup(){
   size(500,500); // 화면사이즈 
@@ -13,6 +24,34 @@ void draw(){
   }
 }
 
+포인트라이트를 활용한 예제 
+
+float angle; //소수점이 있는 숫자를 표현
+void setup() {
+  size(700, 700, P3D); // P3D 프로세싱을 3차원으로 쓰기위함 
+}
+void draw() {
+  background(0); // 배경을 검은색으로 
+  camera(width/2, height/2, 400, width/2, height/2, 0, 0, 1, 0); //카메라 방향
+  pointLight(155, 155, 155, width/2, height/2, -400); //모든 방향으로 골고루 빛을 비추는 조명 
+  translate(width/2, height/2);
+
+  rotateY(angle);
+  rotateX(angle);
+  rotateZ(angle);
+  angle += 0.01;
+  beginShape(QUADS);
+  normal(0, 0, 1);
+  fill(0, 0, 255); //채우기 
+  vertex(-100, +100); // 꼭짓점 
+  vertex(+100, +100);
+  fill(255, 0, 0);
+  vertex(+100, -100);
+  vertex(-100, -100);
+  endShape();
+}
+
+이동하는 원만들기 
 void setup(){
   size(500,500);
 }
@@ -116,32 +155,6 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
 
 
 
-
-
-float angle; //소수점이 있는 숫자를 표현
-void setup() {
-  size(700, 700, P3D); // P3D 프로세싱을 3차원으로 쓰기위함 
-}
-void draw() {
-  background(0); // 배경을 검은색으로 
-  camera(width/2, height/2, 400, width/2, height/2, 0, 0, 1, 0); //카메라 방향
-  pointLight(155, 155, 155, width/2, height/2, -400); //모든 방향으로 골고루 빛을 비추는 조명 
-  translate(width/2, height/2);
-
-  rotateY(angle);
-  rotateX(angle);
-  rotateZ(angle);
-  angle += 0.01;
-  beginShape(QUADS);
-  normal(0, 0, 1);
-  fill(0, 0, 255); //채우기 
-  vertex(-100, +100); // 꼭짓점 
-  vertex(+100, +100);
-  fill(255, 0, 0);
-  vertex(+100, -100);
-  vertex(-100, -100);
-  endShape();
-}
 
 
 ...
